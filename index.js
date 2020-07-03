@@ -1,8 +1,7 @@
-("use strict");
+"use strict";
 
-const APP_KEY = "846c421a229556d4caf48ba5b2325333";
-const APP_ID = "02348ab9";
-const searchURL = "https://api.edamam.com/search";
+const APP_KEY = "6407832403245de17c5a488b24112750";
+const searchURL = "https://api.themoviedb.org/3/discover/movie";
 
 $(document).ready(function() {
   watchSubmitForm();
@@ -12,7 +11,7 @@ function watchSubmitForm() {
   console.log("watchSumbitForm works!");
   $("#js-form").submit(e => {
     e.preventDefault();
-    getRecipe();
+    getMovie();
   });
 }
 
@@ -24,11 +23,11 @@ function formatQueryParams(params) {
   return queryItems.join("&");
 }
 
-function getRecipe() {
+$(".dot").click(function() {
+  const genres = this.id;
   const params = {
-    app_key: APP_KEY,
-    app_id: APP_ID,
-    q: $("#recipe-search").val()
+    api_key: APP_KEY,
+    with_genres: genres
   };
 
   const queryString = formatQueryParams(params);
@@ -36,33 +35,50 @@ function getRecipe() {
   fetch(url)
     .then(response => response.json())
     .then(function(data) {
+      console.log(data);
       displayResults(data);
     })
     .catch(err => {
       console.log(err);
       alert("Something went wrong, try again!");
     });
-}
+});
 
 function displayResults(data) {
   $("#results-list").empty();
-  for (let i = 0; i < data.hits.length; i++) {
-    let calories = Math.round(data.hits[i].recipe.calories);
-    $("#results-list").append(`
+  let moviePick = Math.floor(Math.random() * 20);
+  let imgVar = `https://image.tmdb.org/t/p/original${data.results[moviePick].backdrop_path}`;
+  if (data.results[moviePick].backdrop_path) {
+    imgVar = `https://image.tmdb.org/t/p/original${data.results[moviePick].backdrop_path}`;
+  } else {
+    imgVar =
+      "https://listonline.com.au/wp-content/uploads/2018/04/no_image_ava.png";
+  }
+  $("#results-list").append(`
     <div class="panel">
     <div class="heading">
-      <h3 class="title">${data.hits[i].recipe.label}</h3>
+      <h3 id="movieTitle" class="title">${data.results[moviePick].title}</h3>
     </div>
     <div class="heading">
-    <img class="image" src=${data.hits[i].recipe.image}     />
+    <img class="image" src="${imgVar}"    />
   </div>
-    <div class="heading">
-    <span id='calories'>Calories: ${calories}</span>
-    <span class="title">Servings: ${data.hits[i].recipe.yield}</span>
-    <a href="${data.hits[i].recipe.url}">See the recipe!</a>
+  <div class="heading">
+  <h3 class="description">${data.results[moviePick].overview}</h3>
+</div>
 
-    </div>
     </div>`);
-  }
   $("#results").removeClass("hidden");
+}
+
+$("#listButton").click(function() {
+  let name = $("#movieTitle").text();
+  $("#movieList").append(`
+    <li id="newMovie">${name}   <i onclick="remove()" id="icon" class="fa fa-trash"></i></li>
+    `);
+});
+
+function remove() {
+  $("li").click(function(event) {
+    $(this).remove();
+  });
 }

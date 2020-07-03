@@ -4,26 +4,67 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Recipe finder</title>
+    <title>Movie finder</title>
     <link rel="shortcut icon" href="" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
     <link rel="stylesheet" href="index.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hind&family=Montserrat:wght@500;800;900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <div class="banner">
-      <h1>Recipe Finder</h1>
-    </div>
-    <div class="container">
-      <form id="js-form">
-        <label for="search-term">Search Recipe</label>
-        <input type="text" name="search-term" id="recipe-search" required />
-
-        <input type="submit" value="Go!" />
-      </form>
-    </div>
+    <section class="landing">
+      <div class="dd">
+        <div class="dd-a"><span>Watch List</span></div>
+        <input type="checkbox" />
+        <div class="dd-c">
+          <ul id="movieList">
+            <li>Add movies to the list!</li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
+      </div>
+      <div class="banner">
+        <h1 id="intro" class="headliner">Colors and Genres</h1>
+      </div>
+      <span class="underliner"
+        >Each color represents a movie genre. Click them to get a random movie
+        recommendation from that genre!
+      </span>
+    </section>
+    <section role="main">
+      <div class="colorContainer">
+        <button id="27" class="dot horror"></button>
+        <button id="18" class="dot drama"></button>
+        <button id="35" class="dot comedy"></button>
+        <button id="10749" class="dot romance"></button>
+        <button id="53" class="dot thriller"></button>
+        <button id="80" class="dot crime"></button>
+        <button id="99" class="dot documentary"></button>
+        <button id="28" class="dot action"></button>
+        <button id="12" class="dot adventure"></button>
+        <button id="36" class="dot history"></button>
+        <button id="878" class="dot scienceFiction"></button>
+        <button id="10402" class="dot music"></button>
+        <button id="10752" class="dot war"></button>
+        <button id="37" class="dot western"></button>
+        <button id="16" class="dot animation"></button>
+      </div>
+    </section>
     <div class="resultDiv">
       <p id="js-error-message" class="error-message"></p>
       <section id="results" class="hidden">
         <div id="results-list"></div>
+        <div class="buttonDiv">
+          <button id="listButton">add to watch list</button>
+        </div>
       </section>
     </div>
     <script
