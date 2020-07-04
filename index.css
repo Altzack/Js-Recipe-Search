@@ -384,8 +384,8 @@ a:hover span {
     font-size: 30px;
   }
   .dot {
-    width: 100px;
-    height: 100px;
+    width: 10px;
+    height: 10px;
   }
   .colorContainer {
     margin-top: 50px;
