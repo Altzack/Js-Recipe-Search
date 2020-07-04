@@ -233,6 +233,7 @@ button {
 }
 .dd-c li {
   margin-bottom: 5px;
+  margin-right: 5px;
   word-break: keep-all;
   white-space: nowrap;
   display: block;
