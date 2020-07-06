@@ -1,6 +1,6 @@
 body {
-  /* background-image: url("img/seattle.jpg"); */
-  background-color: #1d3557;
+  /* background-image: url("mg/seattle.jpg"); */
+  background-color: #1f2833;
   color: #f1faee;
   font-family: "Hind", sans-serif;
   margin: 0;
@@ -29,7 +29,9 @@ body {
   cursor: pointer;
   outline: none;
 }
-
+#colors {
+  color: #66fcf1;
+}
 .image {
   width: 50%;
 }
@@ -43,17 +45,17 @@ body {
   font-size: 100px;
   font-family: "Montserrat", serif;
   font-weight: 900;
-  color: #e63946;
+  color: #fff;
 }
 #watch-List {
   height: 20px;
 }
 .underliner {
   font-size: 25px;
-  padding: 20px;
+  text-align: center;
   display: flex;
   justify-content: center;
-  font-family: "Hind", sans-serif;
+  font-family: "Exo 2", sans-serif;
 }
 .dot {
   height: 100px;
@@ -155,10 +157,12 @@ button {
   z-index: 1;
   position: fixed;
   display: inline-block;
+  font-family: "Exo 2", sans-serif;
 }
 .dd-a {
   padding: 10px;
-  background: #e63946;
+  border-radius: 2px;
+  background: #66fcf1;
   color: #fff;
   position: relative;
   -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
@@ -217,7 +221,7 @@ button {
   color: #000;
   display: block;
   position: absolute;
-  background: #fff;
+  background: #fbfdff;
   height: auto;
   transform: scaleY(0);
   transform-origin: top left;
@@ -315,7 +319,7 @@ a:hover span {
     font-weight: 900;
   }
   .underliner {
-    font-size: 20px;
+    font-size: 15px;
     text-align: center;
   }
 
@@ -362,7 +366,7 @@ a:hover span {
     margin-top: 50px;
   }
   .underliner {
-    font-size: 30px;
+    font-size: 25px;
   }
 }
 @media (min-width: 1000px) {
@@ -379,7 +383,9 @@ a:hover span {
     font-size: 30px;
   }
   .underliner {
-    font-size: 35px;
+    font-size: 30px;
+    padding-left: 100px;
+    padding-right: 100px;
   }
   .description {
     font-size: 20px;

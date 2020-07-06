@@ -10,6 +10,10 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300&display=swap"
+      rel="stylesheet"
+    />
 
     <link rel="stylesheet" href="index.css" />
     <link
@@ -20,23 +24,25 @@
   <body>
     <section class="landing">
       <div class="dd">
-        <div class="dd-a"><span>Watch List</span></div>
+        <div class="dd-a">
+          <span>Watch List <i class="fa fa-caret-down"></i></span>
+        </div>
         <input type="checkbox" />
         <div class="dd-c">
           <ul id="movieList">
-            <li>Add movies to the list!</li>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li id="starterLi">Add movies!</li>
           </ul>
         </div>
       </div>
       <div class="banner">
-        <h1 id="intro" class="headliner">Colors and Genres</h1>
+        <h1 id="intro" class="headliner">
+          <span id="colors" class="intro">Colors</span> and Genres
+        </h1>
       </div>
       <span class="underliner"
         >Each color represents a movie genre. Click them to get a random movie
-        recommendation from that genre!
+        recommendation from each genre! You can then add it to your watch later
+        list
       </span>
     </section>
     <section role="main">

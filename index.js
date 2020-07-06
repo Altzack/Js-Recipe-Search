@@ -8,7 +8,6 @@ $(document).ready(function() {
 });
 
 function watchSubmitForm() {
-  console.log("watchSumbitForm works!");
   $("#js-form").submit(e => {
     e.preventDefault();
     getMovie();
@@ -16,7 +15,6 @@ function watchSubmitForm() {
 }
 
 function formatQueryParams(params) {
-  console.log("formatQueryParams function works!");
   const queryItems = Object.keys(params).map(
     key => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`
   );
@@ -69,16 +67,24 @@ function displayResults(data) {
     </div>`);
   $("#results").removeClass("hidden");
 }
+let movieArray = [];
 
 $("#listButton").click(function() {
   let name = $("#movieTitle").text();
-  $("#movieList").append(`
+  if (!movieArray.includes(name)) {
+    movieArray.push(name);
+    console.log(movieArray);
+    $("#movieList").append(`
     <li id="newMovie">${name}   <i onclick="remove()" id="icon" class="fa fa-trash"></i></li>
     `);
+  }
 });
 
 function remove() {
   $("li").click(function(event) {
+    let movieText = $(this).text();
+    let movieIndex = movieArray.indexOf(movieText);
+    movieArray.splice(movieIndex, 1);
     $(this).remove();
   });
 }
