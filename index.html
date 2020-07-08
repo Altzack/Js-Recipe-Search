@@ -14,8 +14,12 @@
       href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300&display=swap"
       rel="stylesheet"
     />
-
+    <link
+      href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="index.css" />
+
     <link
       href="https://fonts.googleapis.com/css2?family=Hind&family=Montserrat:wght@500;800;900&display=swap"
       rel="stylesheet"
@@ -25,12 +29,12 @@
     <section class="landing">
       <div class="dd">
         <div class="dd-a">
-          <span>Watch List <i class="fa fa-caret-down"></i></span>
+          <span>Watch List <i id="caret" class="fa fa-caret-down"></i></span>
         </div>
-        <input type="checkbox" />
+        <input onclick="rotate()" id="checkBox" type="checkbox" />
         <div class="dd-c">
           <ul id="movieList">
-            <li id="starterLi">Add movies!</li>
+            <span id="starterLi">Add movies here!</span>
           </ul>
         </div>
       </div>
@@ -41,8 +45,7 @@
       </div>
       <span class="underliner"
         >Each color represents a movie genre. Click them to get a random movie
-        recommendation from each genre! You can then add it to your watch later
-        list
+        recommendation from each genre! You can then add it to your watch list
       </span>
     </section>
     <section role="main">

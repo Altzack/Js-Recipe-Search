@@ -73,18 +73,44 @@ $("#listButton").click(function() {
   let name = $("#movieTitle").text();
   if (!movieArray.includes(name)) {
     movieArray.push(name);
-    console.log(movieArray);
     $("#movieList").append(`
-    <li id="newMovie">${name}   <i onclick="remove()" id="icon" class="fa fa-trash"></i></li>
+    <li class="newMovie">${name}   <i class="fa fa-trash icon"></i></li>
     `);
+  }
+  $("#checkBox").prop("checked", true);
+  if (movieArray.length === 0) {
+    $("#starterLi").show();
+  } else {
+    $("#starterLi").hide();
+  }
+  console.log(movieArray);
+  if ($("#checkBox").prop("checked")) {
+    $("#caret").addClass("toggleUp");
+  } else {
+    $("#caret").removeClass("toggleUp");
   }
 });
 
-function remove() {
-  $("li").click(function(event) {
-    let movieText = $(this).text();
-    let movieIndex = movieArray.indexOf(movieText);
-    movieArray.splice(movieIndex, 1);
-    $(this).remove();
-  });
+$("#movieList").on("click", "i", function() {
+  let movieText = $(this)
+    .text()
+    .trim();
+  let movieIndex = movieArray.indexOf(movieText);
+  movieArray.splice(movieIndex, 1);
+  $(this)
+    .closest(".newMovie")
+    .remove();
+  if (movieArray.length === 0) {
+    $("#starterLi").show();
+  } else {
+    $("#starterLi").hide();
+  }
+});
+
+function rotate() {
+  if ($("#checkBox").prop("checked")) {
+    $("#caret").addClass("toggleUp");
+  } else {
+    $("#caret").removeClass("toggleUp");
+  }
 }

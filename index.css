@@ -1,10 +1,10 @@
 body {
-  /* background-image: url("mg/seattle.jpg"); */
-  background-color: #1f2833;
-  color: #f1faee;
+  background: rgb(236, 239, 242);
+  color: #2c404c;
   font-family: "Hind", sans-serif;
   margin: 0;
   padding: 0;
+  /* columns: 100% 1; */
 }
 .buttonDiv {
   display: flex;
@@ -18,10 +18,10 @@ body {
   text-transform: uppercase;
   letter-spacing: 2.5px;
   font-weight: 600;
-  color: #1d3557;
+  color: #000;
   margin-top: 40px;
   margin-bottom: 20px;
-  background-color: #c5c3c6;
+  background: linear-gradient(to right, #00f260, #0575e6);
   border: none;
   border-radius: 20px;
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
@@ -30,22 +30,24 @@ body {
   outline: none;
 }
 #colors {
-  color: #66fcf1;
+  background: linear-gradient(to bottom, #00f260, #0575e6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
-.image {
-  width: 50%;
-}
+
 .description {
-  font-family: "Hind", sans-serif;
+  font-family: "Exo 2", sans-serif;
 }
-#icon:hover {
+.icon:hover {
   cursor: pointer;
 }
 .headliner {
   font-size: 100px;
   font-family: "Montserrat", serif;
   font-weight: 900;
-  color: #fff;
+  color: #2c404c;
 }
 #watch-List {
   height: 20px;
@@ -56,6 +58,7 @@ body {
   display: flex;
   justify-content: center;
   font-family: "Exo 2", sans-serif;
+  padding: 20px;
 }
 .dot {
   height: 100px;
@@ -71,49 +74,205 @@ button:hover {
   cursor: pointer;
 }
 .horror {
-  background-color: #b5444e;
+  background: #c31432; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #240b36,
+    #c31432
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #240b36,
+    #c31432
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 .drama {
-  background-color: rgb(81, 29, 226);
+  background: #4e54c8; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #8f94fb,
+    #4e54c8
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #8f94fb,
+    #4e54c8
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 .comedy {
-  background-color: #ffca3a;
+  background: #f12711; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #f5af19,
+    #f12711
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #f5af19,
+    #f12711
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 .romance {
-  background-color: #f72585;
+  background: #7f00ff; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #e100ff,
+    #7f00ff
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #e100ff,
+    #7f00ff
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 .thriller {
-  background-color: #2ec4b6;
+  background: #000428; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #004e92,
+    #000428
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #004e92,
+    #000428
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 .crime {
-  background-color: rgb(0, 0, 0);
+  background: #ffd89b; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #19547b,
+    #ffd89b
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #19547b,
+    #ffd89b
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 .scienceFiction {
-  background-color: rgb(9, 255, 0);
+  background: #00b4db; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #0083b0,
+    #00b4db
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #0083b0,
+    #00b4db
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 .action {
-  background-color: rgb(47, 207, 255);
+  background: #03001e; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #fdeff9,
+    #ec38bc,
+    #7303c0,
+    #03001e
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #fdeff9,
+    #ec38bc,
+    #7303c0,
+    #03001e
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 .adventure {
-  background-color: #5f0f40;
+  background: #fc466b; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #3f5efb,
+    #fc466b
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #3f5efb,
+    #fc466b
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 .western {
-  background-color: #99582a;
+  background: #673ab7; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #512da8,
+    #673ab7
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #512da8,
+    #673ab7
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 .war {
-  background-color: rgb(223, 96, 96);
+  background: #396afc; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #2948ff,
+    #396afc
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #2948ff,
+    #396afc
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 .music {
-  background-color: #2d00f7;
+  background: #4ecdc4; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #556270,
+    #4ecdc4
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #556270,
+    #4ecdc4
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 .documentary {
-  background-color: rgb(255, 255, 255);
+  background: #40e0d0; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #ff0080,
+    #ff8c00,
+    #40e0d0
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #ff0080,
+    #ff8c00,
+    #40e0d0
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 .animation {
-  background-color: #ff5400;
+  background: #0575e6; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #021b79,
+    #0575e6
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #021b79,
+    #0575e6
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 .history {
-  background-color: #9bb3a0;
+  background: #1c92d2; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #f2fcfe,
+    #1c92d2
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #f2fcfe,
+    #1c92d2
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 .container {
   display: flex;
@@ -162,8 +321,8 @@ button {
 .dd-a {
   padding: 10px;
   border-radius: 2px;
-  background: #66fcf1;
-  color: #fff;
+  background: linear-gradient(to bottom, #00f260, #0575e6);
+  color: #b6c3cc;
   position: relative;
   -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
@@ -216,12 +375,24 @@ button {
 }
 .dd-a span {
   color: #000;
+  font-family: "Varela Round", sans-serif;
+}
+#starterLi {
+  font-weight: 500;
+  margin-bottom: 0;
+  padding: 10px;
+  word-break: keep-all;
+  white-space: nowrap;
+  display: block;
+  position: relative;
 }
 .dd-c {
-  color: #000;
+  font-family: "Varela Round", sans-serif;
+  color: #fff;
   display: block;
   position: absolute;
-  background: #fbfdff;
+  background: rgb(38, 52, 62);
+  border-radius: 2.5px;
   height: auto;
   transform: scaleY(0);
   transform-origin: top left;
@@ -235,13 +406,24 @@ button {
   padding: 0;
   list-style-type: none;
 }
+.toggleDown {
+  transform: rotate(0deg);
+}
+.toggleUp {
+  transform: rotate(180deg);
+}
+#checkBox:checked {
+  transform: rotate(180deg);
+}
 .dd-c li {
-  margin-bottom: 5px;
-  margin-right: 5px;
+  padding: 10px;
   word-break: keep-all;
   white-space: nowrap;
   display: block;
   position: relative;
+}
+.dd-c li:hover {
+  background: rgb(56, 128, 153);
 }
 a {
   display: block;
@@ -319,7 +501,7 @@ a:hover span {
     font-weight: 900;
   }
   .underliner {
-    font-size: 15px;
+    font-size: 20px;
     text-align: center;
   }
 
@@ -332,7 +514,8 @@ a:hover span {
     font-size: 40px;
   }
   .image {
-    width: 90%;
+    width: 80%;
+    height: 50%;
   }
   .description {
     width: 90%;
@@ -349,13 +532,12 @@ a:hover span {
   .date {
     font-size: 30px;
   }
+
   .dot {
     width: 90px;
     height: 90px;
   }
-  .image {
-    width: 80%;
-  }
+
   .description {
     width: 90%;
     text-align: center;
@@ -374,7 +556,7 @@ a:hover span {
     font-size: 100px;
   }
   .image {
-    width: 50%;
+    width: 60%;
   }
   .title {
     font-size: 60px;
@@ -401,5 +583,13 @@ a:hover span {
 @media (max-width: 550px) {
   .dd-a {
     padding: 2.5px;
+  }
+  .image {
+    height: 50%;
+  }
+}
+@media (min-width: 1200px) {
+  .image {
+    width: 60%;
   }
 }
