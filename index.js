@@ -21,11 +21,14 @@ function formatQueryParams(params) {
   return queryItems.join("&");
 }
 
+// Fetching the data and randomizing the page number
 $(".dot").click(function() {
+  const randomPage = Math.floor(Math.random() * 300);
   const genres = this.id;
   const params = {
     api_key: APP_KEY,
-    with_genres: genres
+    with_genres: genres,
+    page: randomPage
   };
 
   const queryString = formatQueryParams(params);
@@ -33,15 +36,14 @@ $(".dot").click(function() {
   fetch(url)
     .then(response => response.json())
     .then(function(data) {
-      console.log(data);
       displayResults(data);
     })
     .catch(err => {
-      console.log(err);
       alert("Something went wrong, try again!");
     });
 });
 
+// Randomizing the result data and displaying it
 function displayResults(data) {
   $("#results-list").empty();
   let moviePick = Math.floor(Math.random() * 20);
@@ -69,12 +71,13 @@ function displayResults(data) {
 }
 let movieArray = [];
 
+// Adding movies to the watch list
 $("#listButton").click(function() {
   let name = $("#movieTitle").text();
   if (!movieArray.includes(name)) {
     movieArray.push(name);
     $("#movieList").append(`
-    <li class="newMovie">${name}   <i class="fa fa-trash icon"></i></li>
+    <li class="newMovie"><i class="fa fa-trash icon"></i> ${name}</li>
     `);
   }
   $("#checkBox").prop("checked", true);
@@ -83,14 +86,14 @@ $("#listButton").click(function() {
   } else {
     $("#starterLi").hide();
   }
-  console.log(movieArray);
+
   if ($("#checkBox").prop("checked")) {
     $("#caret").addClass("toggleUp");
   } else {
     $("#caret").removeClass("toggleUp");
   }
 });
-
+// Removing movies from the watch list
 $("#movieList").on("click", "i", function() {
   let movieText = $(this)
     .text()

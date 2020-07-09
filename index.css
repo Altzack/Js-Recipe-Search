@@ -4,14 +4,13 @@ body {
   font-family: "Hind", sans-serif;
   margin: 0;
   padding: 0;
-  /* columns: 100% 1; */
 }
 .buttonDiv {
   display: flex;
   justify-content: center;
 }
 #listButton {
-  width: 50%;
+  width: 250px;
   height: 45px;
   font-family: "Montserrat", sans-serif;
   font-size: 13px;
@@ -34,11 +33,16 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   -moz-background-clip: text;
-  -moz-text-fill-color: transparent; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  -moz-text-fill-color: transparent;
 }
-
+.underline {
+  display: flex;
+  justify-content: center;
+}
 .description {
   font-family: "Exo 2", sans-serif;
+  padding: 30px;
+  line-height: 1.5;
 }
 .icon:hover {
   cursor: pointer;
@@ -214,11 +218,7 @@ button:hover {
     #2948ff,
     #396afc
   ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #2948ff,
-    #396afc
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right, #2948ff, #396afc);
 }
 .music {
   background: #4ecdc4; /* fallback for old browsers */
@@ -227,11 +227,7 @@ button:hover {
     #556270,
     #4ecdc4
   ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #556270,
-    #4ecdc4
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right, #556270, #4ecdc4);
 }
 .documentary {
   background: #40e0d0; /* fallback for old browsers */
@@ -241,12 +237,7 @@ button:hover {
     #ff8c00,
     #40e0d0
   ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #ff0080,
-    #ff8c00,
-    #40e0d0
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right, #ff0080, #ff8c00, #40e0d0);
 }
 .animation {
   background: #0575e6; /* fallback for old browsers */
@@ -255,11 +246,7 @@ button:hover {
     #021b79,
     #0575e6
   ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #021b79,
-    #0575e6
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right, #021b79, #0575e6);
 }
 .history {
   background: #1c92d2; /* fallback for old browsers */
@@ -296,13 +283,15 @@ button {
 .heading {
   display: flex;
   justify-content: center;
-  font-family: "Hind", sans-serif;
+  font-family: "Exo 2", sans-serif;
 }
+
 .title {
-  font-size: 30px;
+  font-size: 25px;
   display: flex;
   justify-content: center;
   font-family: "Montserrat", serif;
+  width: 50%;
 }
 
 .c {
@@ -400,6 +389,7 @@ button {
   -webkit-transform: scaleY(0);
   -webkit-transform-origin: top left;
   -webkit-transition-duration: 0.2s;
+  max-width: 250px;
 }
 .dd-c ul {
   margin: 0;
@@ -421,6 +411,9 @@ button {
   white-space: nowrap;
   display: block;
   position: relative;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .dd-c li:hover {
   background: rgb(56, 128, 153);
@@ -486,8 +479,8 @@ a:hover span {
 }
 @media (min-width: 401px) {
   .dot {
-    width: 75px;
-    height: 75px;
+    width: 70px;
+    height: 70px;
   }
   #intro {
     font-size: 38px;
@@ -511,7 +504,9 @@ a:hover span {
     margin-top: 50px;
   }
   .title {
-    font-size: 40px;
+    font-size: 32px;
+    line-height: 1;
+    width: 80%;
   }
   .image {
     width: 80%;
@@ -527,7 +522,7 @@ a:hover span {
     font-size: 70px;
   }
   .title {
-    font-size: 50px;
+    font-size: 40px;
   }
   .date {
     font-size: 30px;
@@ -549,6 +544,7 @@ a:hover span {
   }
   .underliner {
     font-size: 25px;
+    padding: 30px;
   }
 }
 @media (min-width: 1000px) {
@@ -559,18 +555,20 @@ a:hover span {
     width: 60%;
   }
   .title {
-    font-size: 60px;
+    font-size: 50px;
+  }
+  #listButton {
+    width: 350px;
   }
   .date {
     font-size: 30px;
   }
   .underliner {
     font-size: 30px;
-    padding-left: 100px;
-    padding-right: 100px;
+    padding: 40px;
   }
   .description {
-    font-size: 20px;
+    font-size: 25px;
   }
   .dot {
     width: 100px;
@@ -591,5 +589,11 @@ a:hover span {
 @media (min-width: 1200px) {
   .image {
     width: 60%;
+  }
+  .underliner {
+    width: 80%;
+  }
+  .description {
+    width: 80%;
   }
 }
