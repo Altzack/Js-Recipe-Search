@@ -23,7 +23,7 @@ function formatQueryParams(params) {
 
 // Fetching the data and randomizing the page number
 $(".dot").click(function() {
-  const randomPage = Math.floor(Math.random() * 300);
+  const randomPage = Math.floor(Math.random() * 100);
   const genres = this.id;
   const params = {
     api_key: APP_KEY,
@@ -93,6 +93,7 @@ $("#listButton").click(function() {
     $("#caret").removeClass("toggleUp");
   }
 });
+
 // Removing movies from the watch list
 $("#movieList").on("click", "i", function() {
   let movieText = $(this)
