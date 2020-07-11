@@ -3,17 +3,6 @@
 const APP_KEY = "6407832403245de17c5a488b24112750";
 const searchURL = "https://api.themoviedb.org/3/discover/movie";
 
-$(document).ready(function() {
-  watchSubmitForm();
-});
-
-function watchSubmitForm() {
-  $("#js-form").submit(e => {
-    e.preventDefault();
-    getMovie();
-  });
-}
-
 function formatQueryParams(params) {
   const queryItems = Object.keys(params).map(
     key => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`
@@ -37,6 +26,7 @@ $(".dot").click(function() {
     .then(response => response.json())
     .then(function(data) {
       displayResults(data);
+      console.log(data);
     })
     .catch(err => {
       alert("Something went wrong, try again!");
@@ -57,10 +47,10 @@ function displayResults(data) {
   $("#results-list").append(`
     <div class="panel">
     <div class="heading">
-      <h3 id="movieTitle" class="title">${data.results[moviePick].title}</h3>
+    <h3 id="movieTitle" class="title">${data.results[moviePick].title}</h3>
     </div>
     <div class="heading">
-    <img class="image" src="${imgVar}"    />
+    <img class="image" src="${imgVar}"/>
   </div>
   <div class="heading">
   <h3 class="description">${data.results[moviePick].overview}</h3>
@@ -81,18 +71,17 @@ $("#listButton").click(function() {
     `);
   }
   $("#checkBox").prop("checked", true);
+  displayli();
+  rotate();
+});
+
+function displayli() {
   if (movieArray.length === 0) {
     $("#starterLi").show();
   } else {
     $("#starterLi").hide();
   }
-
-  if ($("#checkBox").prop("checked")) {
-    $("#caret").addClass("toggleUp");
-  } else {
-    $("#caret").removeClass("toggleUp");
-  }
-});
+}
 
 // Removing movies from the watch list
 $("#movieList").on("click", "i", function() {
@@ -104,11 +93,7 @@ $("#movieList").on("click", "i", function() {
   $(this)
     .closest(".newMovie")
     .remove();
-  if (movieArray.length === 0) {
-    $("#starterLi").show();
-  } else {
-    $("#starterLi").hide();
-  }
+  displayli();
 });
 
 function rotate() {

@@ -65,8 +65,8 @@ body {
   padding: 20px;
 }
 .dot {
-  height: 100px;
-  width: 100px;
+  width: 50px;
+  height: 50px;
   outline: none;
   border-radius: 50%;
 }
@@ -462,32 +462,24 @@ a:hover span {
 .image {
   border-radius: 10px;
 }
-@media (max-width: 400px) {
-  .dot {
-    width: 60px;
-    height: 60px;
-  }
-}
-@media (max-width: 320px) {
-  #intro {
-    font-size: 30px;
-  }
-  .dot {
-    width: 40px;
-    height: 40px;
-  }
-}
-@media (min-width: 401px) {
+
+@media (min-width: 400px) {
   .dot {
     width: 70px;
     height: 70px;
   }
+
   #intro {
     font-size: 38px;
     font-weight: 900;
   }
 }
-
+@media (min-width: 350px) {
+  .dot {
+    width: 60px;
+    height: 60px;
+  }
+}
 @media (min-width: 300px) {
   .headliner {
     font-size: 32px;
@@ -497,7 +489,9 @@ a:hover span {
     font-size: 20px;
     text-align: center;
   }
-
+  .dd-a {
+    padding: 2.5px;
+  }
   .colorContainer {
     display: block;
     text-align: center;
@@ -527,10 +521,12 @@ a:hover span {
   .date {
     font-size: 30px;
   }
-
+  .dd-a {
+    padding: 10px;
+  }
   .dot {
-    width: 90px;
-    height: 90px;
+    width: 80px;
+    height: 80px;
   }
 
   .description {
@@ -578,14 +574,7 @@ a:hover span {
     margin-top: 50px;
   }
 }
-@media (max-width: 550px) {
-  .dd-a {
-    padding: 2.5px;
-  }
-  .image {
-    height: 50%;
-  }
-}
+
 @media (min-width: 1200px) {
   .image {
     width: 60%;
