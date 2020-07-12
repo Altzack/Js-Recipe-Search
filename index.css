@@ -71,7 +71,7 @@ body {
   border-radius: 50%;
 }
 
-button:hover {
+input:hover {
   box-shadow: 0px 15px 20px rgb(40, 43, 42);
   color: #000;
   transform: translateY(-7px);
@@ -270,7 +270,7 @@ button:hover {
   display: flex;
   justify-content: space-evenly;
 }
-button {
+input {
   border: 0;
 }
 .hidden {
