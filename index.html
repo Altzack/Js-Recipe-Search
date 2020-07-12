@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Movie Capstone</title>
-    <link rel="shortcut icon" href="" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -17,7 +16,7 @@
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
-    <section class="header">
+    <header class="header">
       <div class="dd">
         <div class="dd-a">
           <span>Watch List <i id="caret" class="fa fa-caret-down"></i></span>
@@ -41,29 +40,33 @@
           list!
         </span>
       </div>
-    </section>
+    </header>
     <section role="main">
       <div class="colorContainer">
-        <button id="27" class="dot horror"></button>
-        <button id="18" class="dot drama"></button>
-        <button id="35" class="dot comedy"></button>
-        <button id="10749" class="dot romance"></button>
-        <button id="53" class="dot thriller"></button>
-        <button id="80" class="dot crime"></button>
-        <button id="99" class="dot documentary"></button>
-        <button id="28" class="dot action"></button>
-        <button id="12" class="dot adventure"></button>
-        <button id="36" class="dot history"></button>
-        <button id="878" class="dot scienceFiction"></button>
-        <button id="10402" class="dot music"></button>
-        <button id="10752" class="dot war"></button>
-        <button id="37" class="dot western"></button>
-        <button id="16" class="dot animation"></button>
+        <button alt="horror" id="27" class="dot horror"></button>
+        <button alt="drama" id="18" class="dot drama"></button>
+        <button alt="comedy" id="35" class="dot comedy"></button>
+        <button alt="romance" id="10749" class="dot romance"></button>
+        <button alt="thriller" id="53" class="dot thriller"></button>
+        <button alt="crime" id="80" class="dot crime"></button>
+        <button alt="documentary" id="99" class="dot documentary"></button>
+        <button alt="action" id="28" class="dot action"></button>
+        <button alt="adventure" id="12" class="dot adventure"></button>
+        <button alt="history" id="36" class="dot history"></button>
+        <button
+          alt="scienceFiction"
+          id="878"
+          class="dot scienceFiction"
+        ></button>
+        <button alt="music" id="10402" class="dot music"></button>
+        <button alt="war" id="10752" class="dot war"></button>
+        <button alt="western" id="37" class="dot western"></button>
+        <button alt="animation" id="16" class="dot animation"></button>
       </div>
     </section>
     <div class="resultDiv">
       <p id="js-error-message" class="error-message"></p>
-      <section id="results" class="hidden">
+      <section role="results" id="results" class="hidden">
         <div id="results-list"></div>
         <div class="buttonDiv">
           <button id="listButton">add to watch list</button>

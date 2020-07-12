@@ -10,9 +10,19 @@ function formatQueryParams(params) {
   return queryItems.join("&");
 }
 
+function pageScroll() {
+  $("html, body").animate({ scrollTop: $("#results-list").offset().top }, 500);
+}
+
+function randomNumber(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
 // Fetching the data and randomizing the page number
 $(".dot").click(function() {
-  const randomPage = Math.floor(Math.random() * 100);
+  const randomPage = randomNumber(1, 50);
   const genres = this.id;
   const params = {
     api_key: APP_KEY,
@@ -26,17 +36,18 @@ $(".dot").click(function() {
     .then(response => response.json())
     .then(function(data) {
       displayResults(data);
-      console.log(data);
     })
     .catch(err => {
       alert("Something went wrong, try again!");
+      console.log(err);
     });
+  // pageScroll();
 });
 
 // Randomizing the result data and displaying it
 function displayResults(data) {
   $("#results-list").empty();
-  let moviePick = Math.floor(Math.random() * 20);
+  let moviePick = randomNumber(0, 19);
   let imgVar = `https://image.tmdb.org/t/p/original${data.results[moviePick].backdrop_path}`;
   if (data.results[moviePick].backdrop_path) {
     imgVar = `https://image.tmdb.org/t/p/original${data.results[moviePick].backdrop_path}`;
