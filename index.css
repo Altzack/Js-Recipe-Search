@@ -76,7 +76,7 @@ body {
   cursor: pointer;
 }
 .headliner {
-  font-size: 100px;
+  font-size: 28px;
   font-family: "Montserrat", serif;
   font-weight: 900;
   color: #2c404c;
@@ -517,12 +517,13 @@ a:hover span {
     width: 60px;
     height: 60px;
   }
-}
-@media (min-width: 300px) {
   .headliner {
     font-size: 32px;
     font-weight: 900;
+    padding: 5px;
   }
+}
+@media (min-width: 300px) {
   #listButton {
     font-size: 10px;
     padding: 5px;

@@ -121,7 +121,7 @@ $("#listButton").on("click", function() {
   if (!movieArray.includes(name)) {
     movieArray.push(name);
     $("#movieList").append(`
-    <li class="newMovie"><i class="fa fa-trash icon"></i> <span class="listSpan" id="${movieId}">${name}</span></li>
+    <li class="newMovie"><span class="listSpan" id="${movieId}">${name}</span> <i class="fa fa-trash icon"></i></li>
     `);
   } else {
     alert("movie already in watch list!");
