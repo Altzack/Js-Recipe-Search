@@ -1,4 +1,4 @@
-*COLORS AND MOVIES 
+**COLORS AND MOVIES 
 
 <img width="200" alt="movieAppSS" src="https://user-images.githubusercontent.com/47507987/87093940-dea7b280-c1f2-11ea-9c6b-8d4eeda17075.png"> 
 
