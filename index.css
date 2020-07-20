@@ -450,6 +450,8 @@ button {
 }
 .dd-c li:hover {
   background: rgb(56, 128, 153);
+}
+.listSpan {
   cursor: pointer;
 }
 a {
@@ -533,6 +535,10 @@ a:hover span {
     padding: 5px;
     font-size: 10px;
   }
+  #starterLi {
+    padding: 5px;
+    font-size: 10px;
+  }
   .underliner {
     font-size: 20px;
     text-align: center;
@@ -586,6 +592,10 @@ a:hover span {
     padding: 10px;
     font-size: 15px;
   }
+  #starterLi {
+    padding: 10px;
+    font-size: 15px;
+  }
   #listButton {
     font-size: 13px;
     padding: 7px;
@@ -627,6 +637,10 @@ a:hover span {
     font-size: 50px;
   }
   .dd-c li {
+    padding: 10px;
+    font-size: 18px;
+  }
+  #starterLi {
     padding: 10px;
     font-size: 18px;
   }

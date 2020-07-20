@@ -2,6 +2,7 @@
 
 const APP_KEY = "6407832403245de17c5a488b24112750";
 const searchURL = "https://api.themoviedb.org/3/discover/movie";
+let movieId = "";
 
 // formatting query paramaters
 function formatQueryParams(params) {
@@ -54,8 +55,8 @@ $(".dot").on("click", function() {
     .then(function(data) {
       displayResults(data, moviePick);
       getTrailer(data, moviePick);
+      movieId = data.results[moviePick].id;
     })
-    .then()
     .catch(err => {
       alert("Something went wrong, try again!");
       console.log(err);
@@ -86,6 +87,31 @@ function displayResults(data, moviePick) {
     $("img").addClass("hidden");
   }
   $("#results").removeClass("hidden");
+  pageScrollDown();
+}
+
+function displayResultsList(data) {
+  $("#results-list").empty();
+  let imgVar = `https://image.tmdb.org/t/p/original${data.backdrop_path}`;
+  $("#results-list").append(`
+    <div class="panel">
+    <div class="heading">
+    <h3 id="movieTitle" class="title">${data.title}</h3>
+    </div>
+    <div class="heading">
+    <img class="image" src="${imgVar}"/>
+  </div>
+  <div class="heading">
+  <h3 class="description">${data.overview}</h3>
+</div>
+    </div>`);
+  if (data.backdrop_path) {
+    imgVar = `https://image.tmdb.org/t/p/original${data.backdrop_path}`;
+  } else {
+    imgVar = "img/noimg.png";
+    $("img").addClass("hidden");
+  }
+  $("#results").removeClass("hidden");
 }
 let movieArray = [];
 
@@ -95,7 +121,7 @@ $("#listButton").on("click", function() {
   if (!movieArray.includes(name)) {
     movieArray.push(name);
     $("#movieList").append(`
-    <li class="newMovie"><i class="fa fa-trash icon"></i> ${name}</li>
+    <li class="newMovie"><i class="fa fa-trash icon"></i> <span class="listSpan" id="${movieId}">${name}</span></li>
     `);
   } else {
     alert("movie already in watch list!");
@@ -137,33 +163,43 @@ function rotate() {
 }
 
 // Clicking movies in the watch list loads the movie
-// $("#movieList").on("click", "li", function(data) {
-//   let listId = `${data.results.id}`;
-//   console.log(listId);
-//   const params = {
-//     api_key: APP_KEY,
-//     original_title: listName
-//   };
-
-//   const queryString = formatQueryParams(params);
-//   const url = searchURL + "?" + queryString;
-//   console.log(url);
-
-//   fetch(url)
-//     .then(response => response.json())
-//     .then(function(data) {
-//       displayResults(data);
-//     })
-//     .catch(err => {
-//       alert("Something went wrong, try again!");
-//       console.log(err);
-//     });
-//   pageScrollDown();
-// });
+$("#movieList").on("click", "span", function() {
+  let listMovieId = this.id;
+  let listUrl = `https://api.themoviedb.org/3/movie/${listMovieId}?api_key=${APP_KEY}&language=en-US`;
+  fetch(listUrl)
+    .then(response => response.json())
+    .then(function(data) {
+      displayResultsList(data);
+      getTrailerList(listMovieId);
+    })
+    .catch(err => {
+      alert("Something went wrong, try again!");
+      console.log(err);
+    });
+  pageScrollDown();
+});
 
 // second api call
 function getTrailer(data, moviePick) {
   const trailerUrl = `https://api.themoviedb.org/3/movie/${data.results[moviePick].id}/videos?api_key=${APP_KEY}&language=en-US`;
+  fetch(trailerUrl)
+    .then(response => response.json())
+    .then(function(data) {
+      $("#trailerButton")
+        .off("click")
+        .on("click", function() {
+          if (data.results.length > 0) {
+            let youtubeUrl = `https://www.youtube.com/watch?v=${data.results[0].key}`;
+            window.open(youtubeUrl);
+          } else {
+            alert("sorry, no trailer found for this movie");
+          }
+        });
+    });
+}
+
+function getTrailerList(movieId) {
+  const trailerUrl = `https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=${APP_KEY}&language=en-US`;
   fetch(trailerUrl)
     .then(response => response.json())
     .then(function(data) {
