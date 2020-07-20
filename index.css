@@ -532,8 +532,8 @@ a:hover span {
     padding: 5px;
   }
   .dd-c li {
-    padding: 5px;
-    font-size: 10px;
+    padding: 8px;
+    font-size: 12px;
   }
   #starterLi {
     padding: 5px;
@@ -641,7 +641,7 @@ a:hover span {
     font-size: 18px;
   }
   #starterLi {
-    padding: 10px;
+    padding: 11px;
     font-size: 18px;
   }
 
