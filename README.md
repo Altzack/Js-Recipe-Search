@@ -4,7 +4,7 @@ COLORS AND MOVIES
 
 A movie generating/list making app based on your favorite color. Pick a color and get back a random movie recommendation from that genre. 
 
-Built with HTML, CSS, JS and jQuery.
+Built with HTML, CSS, JS, jQuery and the TMDB api. https://www.themoviedb.org/
 
 https://movie-capstone.netlify.app/
 
