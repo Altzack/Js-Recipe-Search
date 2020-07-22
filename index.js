@@ -24,11 +24,11 @@ $(".dot").mouseout(function() {
 
 //page scroll
 function pageScrollDown() {
-  $("html, body").animate({ scrollTop: $("#results").offset().top }, 400);
+  $("html, body").animate({ scrollTop: $("#results").offset().top }, 800);
 }
 
 function pageScrollUp() {
-  $("html, body").animate({ scrollTop: $(".dd").offset().top }, 400);
+  $("html, body").animate({ scrollTop: $(".dd").offset().top }, 800);
 }
 
 function randomNumber(min, max) {
@@ -61,7 +61,9 @@ $(".dot").on("click", function() {
       alert("Something went wrong, try again!");
       console.log(err);
     });
-  pageScrollDown();
+  window.addEventListener("load", function() {
+    pageScrollDown();
+  });
 });
 
 // Randomizing the result data and displaying it
@@ -133,14 +135,6 @@ $("#listButton").on("click", function() {
   pageScrollUp();
 });
 
-function displayli() {
-  if (movieArray.length === 0) {
-    $("#starterLi").show();
-  } else {
-    $("#starterLi").hide();
-  }
-}
-
 // Removing movies from the watch list
 $("#movieList").on("click", "i", function() {
   let movieText = $(this)
@@ -158,6 +152,12 @@ function rotate() {
   if ($("#checkBox").prop("checked")) {
     $("#caret").addClass("toggleUp");
   } else {
+    $("#caret").removeClass("toggleUp");
+  }
+}
+
+function displayli() {
+  if (movieArray.length === 0) {
     $("#caret").removeClass("toggleUp");
   }
 }
