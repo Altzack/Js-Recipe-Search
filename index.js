@@ -14,7 +14,7 @@ function formatQueryParams(params) {
 
 //Showing alt text on hover
 $(".dot").hover(function() {
-  let alt = $(this).attr("alt");
+  let alt = $(this).attr("aria-label");
   $(this).text(alt);
 });
 
