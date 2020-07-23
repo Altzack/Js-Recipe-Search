@@ -529,6 +529,7 @@ a:hover span {
     font-size: 10px;
     padding: 5px;
   }
+
   #trailerButton {
     font-size: 10px;
     padding: 5px;
@@ -553,6 +554,7 @@ a:hover span {
     display: block;
     text-align: center;
     margin-top: 50px;
+    line-height: 75px;
   }
   .title {
     font-size: 27px;
